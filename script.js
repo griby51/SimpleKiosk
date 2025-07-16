@@ -21,8 +21,8 @@ async function updateSpotifyInfo(){
     try {
         let response = await fetch('http://localhost:5000/api/spotify_info');
         let data = await response.json();
-        document.getElementById('song-title').innerHTML = data.title;
-        document.getElementById('artist').innerHTML = data.artist;
+        document.getElementById('song-title').innerHTML = data.title + " ●&nbsp;";
+        document.getElementById('artist').innerHTML = " " + data.artist;
         document.getElementById('cover').src = data.cover;
     } catch (error) {
         console.error(error);
